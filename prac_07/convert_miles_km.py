@@ -11,10 +11,10 @@ class ConvertMilesKmApp(App):
         return self.root
 
     def handle_convert(self):
-        result = self.get_miles() * MILES_TO_KM
+        result = self.get_valid_miles() * MILES_TO_KM
         self.root.ids.output_label.text = str(result)
 
-    def get_miles(self):
+    def get_valid_miles(self):
         try:
             value = float(self.root.ids.input_number.text)
             return value
@@ -22,7 +22,7 @@ class ConvertMilesKmApp(App):
             return 0
 
     def handle_increment(self, increment_size):
-        result = self.get_miles() + increment_size
+        result = self.get_valid_miles() + increment_size
         self.root.ids.input_number.text = str(result)
 
 
