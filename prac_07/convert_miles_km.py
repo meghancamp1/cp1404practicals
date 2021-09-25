@@ -21,5 +21,9 @@ class ConvertMilesKmApp(App):
         except ValueError:
             return 0
 
+    def handle_increment(self, increment_size):
+        result = self.get_miles() + increment_size
+        self.root.ids.input_number.text = str(result)
+
 
 ConvertMilesKmApp().run()
