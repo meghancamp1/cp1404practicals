@@ -3,6 +3,7 @@ CP1404/CP5632 Practical
 Demos of various os module examples
 """
 import os
+ONE_LETTER_WORDS = "A", "O", "I"
 
 
 def main():
@@ -14,7 +15,7 @@ def main():
             directory_and_new_name = os.path.join(directory_name, new_name)
             directory_and_file_name = os.path.join(directory_name, filename)
             print("Renaming {} to {}".format(filename, new_name))
-            # os.rename(directory_and_file_name, directory_and_new_name)
+            os.rename(directory_and_file_name, directory_and_new_name)
 
 
 def get_fixed_filename(filename):
@@ -22,7 +23,8 @@ def get_fixed_filename(filename):
     name = ""
     for count, character in enumerate(filename):
         if count != 0:
-            if character.isupper() and filename[count-1].islower():
+            if character.isupper() and filename[count - 1].islower() or \
+                    character.isupper() and filename[count - 1] in ONE_LETTER_WORDS:
                 name += "_"
         name += character
     new_name = name.title().replace(" ", "_").replace(".Txt", ".txt")
