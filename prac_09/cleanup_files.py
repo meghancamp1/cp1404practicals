@@ -25,7 +25,7 @@ def get_fixed_filename(filename):
             if character.isupper() and filename[count-1].islower():
                 name += "_"
         name += character
-    new_name = name.replace(" ", "_").replace(".TXT", ".txt")
+    new_name = name.title().replace(" ", "_").replace(".Txt", ".txt")
     return new_name
 
 
