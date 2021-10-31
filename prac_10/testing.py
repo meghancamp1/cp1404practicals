@@ -39,20 +39,21 @@ def run_tests():
     # this should pass (no output)
     test_car = Car()
     assert test_car.odometer == 0, "Car does not set odometer correctly"
+    # the test below should pass
+    assert test_car.fuel == 0
 
-    # TODO: 2. write assert statements to show if Car sets the fuel correctly
     # Note that Car's __init__ function sets the fuel in one of two ways:
     # using the value passed in or the default
     # You should test both of these
     test_car = Car(fuel=10)
+    # test below should pass
+    assert test_car.fuel == 10
 
 
 run_tests()
 
-# TODO: 3. Uncomment the following line and run the doctests
 # (PyCharm may see your >>> doctest comments and run doctests anyway.)
-# doctest.testmod()
-
+doctest.testmod()
 
 # TODO: 5. Write and test a function to format a phrase as a sentence,
 # starting with a capital and ending with a single full stop.
