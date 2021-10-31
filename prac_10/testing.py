@@ -70,10 +70,13 @@ def phrase_to_sentence(phrase):
     """
     Format a phrase as a sentence
     >>> phrase_to_sentence("hello")
-    Hello.
+    'Hello.'
     >>> phrase_to_sentence("It is an ex parrot.")
-    It is an ex parrot.
+    'It is an ex parrot.'
     >>> phrase_to_sentence("One more")
-    One more.
+    'One more.'
     """
-    pass
+    sentence = phrase.capitalize()
+    if phrase[-1] != ".":
+        sentence += "."
+    return sentence
